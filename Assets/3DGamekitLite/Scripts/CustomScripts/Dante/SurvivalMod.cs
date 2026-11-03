@@ -5,6 +5,7 @@ public class SurvivalMod : MonoBehaviour
 {
     [SerializeField] private float thirstLevel = 100f;
     [SerializeField] private float thirstSpeed;
+    [SerializeField] private float timer = 10f; 
     
     [SerializeField] private bool thirsty;
     [SerializeField] private bool parched;
@@ -31,17 +32,24 @@ public class SurvivalMod : MonoBehaviour
         } 
         if (thirstLevel <= 0 && thirsty)
         {
-            Damageable.DamageMessage msg = new Damageable.DamageMessage()
+            timer -= Time.deltaTime;
+            if (timer <= 0)
             {
-                amount = 1,
-                damager = this,
-                damageSource = new Vector3(0, 0, 0),
-                direction = new Vector3(0, 0, 0),
-                throwing = false,
-                stopCamera = false
-            };
-            playerObject.GetComponent<Damageable>().ApplyDamage();
-            Debug.Log(message:"Damage by thirst");
+                Damageable.DamageMessage msg = new Damageable.DamageMessage()
+                            {
+                                amount = 1,
+                                damager = this,
+                                damageSource = new Vector3(0, 0, 0),
+                                direction = new Vector3(0, 0, 0),
+                                throwing = false,
+                                stopCamera = false
+                            };
+                            playerObject.GetComponent<Damageable>().ApplyDamage(msg);
+                            Debug.Log(message:"Damage by thirst");
+                            timer = 10f;
+            }
+
+            
         }
     }
 }
