@@ -40,3 +40,10 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+  pressurePadAudio:
+    Guid:
+      Data1: 1314172765
+      Data2: 1205059052
+      Data3: -8480354
+      Data4: -2141451249
+    Path: event:/Int/Int_Pressure_Pad_01
