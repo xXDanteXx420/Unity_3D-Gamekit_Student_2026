@@ -18,11 +18,12 @@ public class InteractableAudio : ScriptableObject
     {
         RuntimeManager.PlayOneShot(boxDestroyAudio, objectTransform.position);
     }
-
+    //Declares a method that should play the pressurePadAudio with 3D-Positioning by referencing a Transform position.
     public void PressurePadPlay(Transform objectTransform)
     {
         RuntimeManager.PlayOneShot(pressurePadAudio, objectTransform.position);
     }
+    //Declares a method that should play the switchAudio with 3D-Positioning by referencing a Transform position.
     public void SwitchTogglePlay(Transform objectTransform)
     {
         RuntimeManager.PlayOneShot(switchAudio, objectTransform.position);
