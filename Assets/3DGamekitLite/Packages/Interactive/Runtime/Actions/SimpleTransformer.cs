@@ -87,6 +87,7 @@ namespace Gamekit3D.GameCommands
                 enabled = false;
                 if (OnStopCommand != null) OnStopCommand.Send();
                 direction *= -1;
+                Debug.Log(message:"animation ended");
             }
         }
     }
