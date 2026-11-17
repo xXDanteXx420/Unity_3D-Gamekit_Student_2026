@@ -23,4 +23,8 @@ public class InteractableAudio : ScriptableObject
     {
         RuntimeManager.PlayOneShot(pressurePadAudio, objectTransform.position);
     }
+    public void SwitchTogglePlay(Transform objectTransform)
+    {
+        RuntimeManager.PlayOneShot(switchAudio, objectTransform.position);
+    }
 }
